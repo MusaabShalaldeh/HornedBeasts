@@ -1,28 +1,30 @@
 import React from "react";
 import HornedBeast from "./HornedBeasts";
-import Data from "../assets/data.json";
+import Row from "react-bootstrap/Row";
 
 class Main extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: null,
+    };
+  }
   render() {
     return (
       <>
         <main>
-          {
-            Data.map((item) => {
+          <Row xs={1} md={4} className="g-4">
+            {this.props.dataFile.map((item) => {
               return (
                 <HornedBeast
                   title={item.title}
                   imageURL={item.image_url}
                   description={item.description}
+                  showModal = {this.props.showModal}
                 />
               );
-            })
-            /* <HornedBeast
-            title="UniWhal"
-            imageURL="http://3.bp.blogspot.com/_DBYF1AdFaHw/TE-f0cDQ24I/AAAAAAAACZg/l-FdTZ6M7z8/s1600/Unicorn_and_Narwhal_by_dinglehopper.jpg"
-            description="A unicorn and a narwhal nuzzling their horns"
-          /> */
-          }
+            })}
+          </Row>
         </main>
       </>
     );
