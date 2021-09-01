@@ -37,6 +37,7 @@ class HornedBeast extends React.Component {
             <Card.Body>
               <Card.Title>{this.props.title}</Card.Title>
               <Card.Text>{this.props.description}</Card.Text>
+              <Card.Text>Horns: {this.props.horns}</Card.Text>
               <Card.Text>Favorites❤️: {this.state.favorites}</Card.Text>
               <Button variant="primary" onClick={this.sendData}>
                 View Details
